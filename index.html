@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KTStartPage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('res/bg/bg.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        .input-container input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .icon-buttons {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            opacity: 0.7;
+        }
+
+        .icon-buttons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .icon-buttons a:hover {
+            display: inline-block;
+            margin-right: 10px;
+            opacity: 0.3;
+        }
+
+        .custom-links {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #f2f2f2;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+        }
+
+        .custom-link {
+            margin: 0 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #4285f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Стартовая страница</h1>
+        <div class="input-container">
+            <input type="text" id="query" placeholder="Введите запрос" required>
+            <button type="button" onclick="search()">Поиск</button>
+        </div>
+    </div>
+
+    <div class="icon-buttons">
+        <a href="https://github.com" target="_blank"><img src="res/icons/github.svg" alt="GitHub" width="32"></a>
+    </div>
+
+    <div class="custom-links">
+        <a href="#" class="custom-link"><b>Установить как главная страница</b></a>
+        <a href="https://klodskateam.rf.gd/" class="custom-link">KlodskaTeam</a>
+        <a href="https://klodskateam.rf.gd/forum/" class="custom-link">KlodskaTeam forum</a>
+        <a href="https://klodskateam.rf.gd/wiki/" class="custom-link">KlodskaTeam wiki</a>
+        <a href="http://ktgames.000.pe/" class="custom-link">KTGames<small>β</small></a>
+        <div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"ru","detect_browser_language":true,"languages":["ru","en","zh-CN","es","be"],"wrapper_selector":".gtranslate_wrapper","flag_size":24,"flag_style":"3d"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/popup.js" defer></script>
+    </div>
+
+    <script>
+        function search() {
+            var query = document.getElementById("query").value;
+            var url = "https://google.com/search?q=" + encodeURIComponent(query);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
